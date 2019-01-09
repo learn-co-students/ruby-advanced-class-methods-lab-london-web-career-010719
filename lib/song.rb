@@ -47,18 +47,18 @@ class Song
   end
 
   def self.new_from_filename(file_name)
-    name_array = file_name.split(/[-.]/).collect {|x| x.strip}
-    name = name_array[1]
-    artist = name_array[0]
+    file_array = file_name.split(/[-.]/).collect {|x| x.strip}
+    name = file_array[1]
+    artist = file_array[0]
     new_song = self.new_by_name(name)
     new_song.artist_name = artist
     new_song
   end
 
   def self.create_from_filename(file_name)
-    name_array = file_name.split(/[-.]/).collect {|x| x.strip}
-    name = name_array[1]
-    artist = name_array[0]
+    file_array = file_name.split(/[-.]/).collect {|x| x.strip}
+    name = file_array[1]
+    artist = file_array[0]
     new_song = self.create_by_name(name)
     new_song.artist_name = artist
     new_song
