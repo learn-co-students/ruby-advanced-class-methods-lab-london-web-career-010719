@@ -51,7 +51,7 @@ class Song
     name = name_array[1]
     artist = name_array[0]
     new_song = self.new_by_name(name)
-    new_song.artist_name= artist
+    new_song.artist_name = artist
     new_song
   end
 
