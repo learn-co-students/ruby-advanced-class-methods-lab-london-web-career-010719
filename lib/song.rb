@@ -15,11 +15,9 @@ class Song
       end
 
       def self.create
-             song = self.new
-             song.save
-            self.all << song
-            song
-            # binding.pry
+        song = self.new
+        song.save
+        song
 
       end
 
@@ -30,7 +28,7 @@ class Song
       end
 
       def self.create_by_name(name)
-        song = self.new
+        song = self.create
         song.name = name
         song.save
         song
@@ -46,12 +44,14 @@ class Song
           end
       end
 
+
       def self.find_or_create_by_name(name)
 
-        if !self.find_by_name(name)
-          self.create_by_name(name)
-        end
-          self.find_by_name(name)
+        self.find_by_name(name) || self.create_by_name(name)
+        # if !self.find_by_name(name)
+        #   self.create_by_name(name)
+        # end
+        #   self.find_by_name(name)
 
       end
 
